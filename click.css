@@ -1,0 +1,115 @@
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+img {
+  width: 400px;
+  margin-bottom: 0;
+}
+
+.choiseTimer {
+  display: flex;
+  justify-content: center
+}
+
+.choiseTimer label {
+  display: block;
+  width: 80px;
+  background: #D6DCE5;
+  color: #444444;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choiseTimer input:checked+label {
+  background: #444444;
+  color: white;
+}
+
+.choiseTimer input {
+  display: none;
+}
+
+table {
+  padding: 0px;
+  margin: 0px;
+}
+
+.countBox {
+  width: 300px;
+  height: 150px;
+  background-color: rgb(248, 248, 248);
+  text-align: center;
+  margin: 0px auto;
+  border-radius: 10px;
+}
+
+#countdownBox {
+  text-align: left;
+  margin: auto auto auto 15px;
+  padding: 3px;
+}
+
+body {
+  background-color: #89c3eb;
+  
+}
+#countdown {
+  margin: 3px 0px 0px 0px;
+}
+
+#clickbutton {
+  width: 300px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+  background-color: #eebbcb;
+  border-radius: 10px;
+  color: #444444;
+  font-weight: bold;
+  user-select: none;
+}
+
+
+#startbutton {
+  width: 300px;
+  height: 20px;
+  margin-bottom: 0px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
+  padding: 1px 0px 2px 0px;
+  background-color: #D6DCE5;
+  border-radius: 5px;
+  color: #583822;
+  font-weight: bold;
+  user-select: none;
+}
+
+#startbutton:active {
+  background: #444444;
+  color: white;
+}
+
+p #startbutton {
+  margin: 0;
+}
+
+#counter {
+  font-size: 60px;
+  font-weight: bold;
+  padding: 10px 0px 0px 0px;
+  margin: 0px;
+}
