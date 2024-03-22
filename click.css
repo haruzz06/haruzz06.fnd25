@@ -80,6 +80,7 @@ body {
   color: #444444;
   font-weight: bold;
   user-select: none;
+  cursor: pointer;
 }
 
 
