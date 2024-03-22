@@ -76,34 +76,32 @@ function startTimer() {
   disableButtons();
   setTimeout(function() {
     
-    if (gameStarted === false) {
+    if (gameStarted === false && timer === 10 || timer === 15 || timer === 30) {
+      gameStarted = true;
+      countdownInterval = setInterval(function() {
+        timer--;
+        countdown.innerText = "Time：" + timer + "s";
 
-      if (timer === 10 || timer === 15 || timer === 30) {
-        gameStarted = true;
-        countdownInterval = setInterval(function() {
-          timer--;
-          countdown.innerText = "Time：" + timer + "s";
+        if (timer === 0) {
+          clearInterval(countdownInterval);
+          startMusic.currentTime = 0;
+          startMusic.play();
+          clickButton.disabled = true;
+          setTimeout(function () { 
+            alert("TimeUp！\nscore：" + count);
+            resetGame(); }, 100)
+        }
 
-          if (timer === 0) {
-            clearInterval(countdownInterval);
-            startMusic.currentTime = 0;
-            startMusic.play();
-            clickButton.disabled = true;
-            setTimeout(function () { 
-              alert("TimeUp！\nscore：" + count);
-              resetGame(); }, 100)
-          }
-
-        }, 1000);
-        
-      } else {
-        alert("制限時間を選択してください");
-      }
+      }, 1000);
+      
+    } else {
+      alert("制限時間を選択してください");
     }
 
   }, 3000);
 }
 
+//スペースキーに開始イベントを仕込む
 document.addEventListener("keydown", function(event) {
   if (event.code === "Space") {
     if (gameStarted === false) {
