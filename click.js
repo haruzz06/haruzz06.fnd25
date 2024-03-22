@@ -3,9 +3,10 @@ let countdownInterval = null;
 let count = 0; //クリック数
 let gameStarted = false; //ゲーム開始フラグ 開始中true
 let initialTimer = 0;
-const music = new Audio('gameEnd.mp3'); //ゲーム終了♪
-const music2 = new Audio('gameStart.mp3'); //ゲーム終了♪
+const startMusic = new Audio('gameEnd.mp3'); //ゲーム終了♪
+const endMusic = new Audio('gameStart.mp3'); //ゲーム終了♪
 
+//要素を取ってくる
 const tenSec = document.getElementById("tenSec");
 const fifteenSec = document.getElementById("fifteenSec");
 const thirtySec = document.getElementById("thirtySec");
@@ -70,14 +71,14 @@ clickButton.addEventListener("mousedown", clickCounter);
 
 //3秒後にカウントダウンを開始(ゲームを開始)
 function startTimer() {
-  music2.currentTime = 0;
-  music2.play();
+  endMusic.currentTime = 0;
+  endMusic.play();
+  disableButtons();
   setTimeout(function() {
     
     if (gameStarted === false) {
 
       if (timer === 10 || timer === 15 || timer === 30) {
-        disableButtons();
         gameStarted = true;
         countdownInterval = setInterval(function() {
           timer--;
@@ -85,8 +86,8 @@ function startTimer() {
 
           if (timer === 0) {
             clearInterval(countdownInterval);
-            music.currentTime = 0;
-            music.play();
+            startMusic.currentTime = 0;
+            startMusic.play();
             clickButton.disabled = true;
             setTimeout(function () { 
               alert("TimeUp！\nscore：" + count);
